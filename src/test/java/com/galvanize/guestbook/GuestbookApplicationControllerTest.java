@@ -52,7 +52,7 @@ class GuestbookApplicationControllerTest {
 		mockMvc.perform(get("/api/guestComments"))
 				.andExpect(status().isOk())
 				.andDo(print())
-				.andExpect(jsonPath("length()").value(1))
+				.andExpect(jsonPath("length()").value(4))
 				.andExpect(jsonPath("$[0].id").exists())
 				.andExpect(jsonPath("$[0].name").value("amal"))
 				.andExpect(jsonPath("$[0].comment").value("hello"));
