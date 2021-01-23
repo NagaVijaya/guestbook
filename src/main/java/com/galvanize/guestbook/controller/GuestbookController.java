@@ -18,6 +18,11 @@ public class GuestbookController {
         this.guestService = guestService;
     }
 
+    @GetMapping("/home")
+    public String greeting(){
+        return "Welcome to GuestBook!!!";
+    }
+
     @PostMapping("/api/guestComment")
     @ResponseStatus(HttpStatus.CREATED)
     public void addGuestNameAndComment(@RequestBody Guest guest){
